@@ -1,0 +1,27 @@
+{
+  "name": "cf-swarm",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/narrow.test.ts",
+    "test:integration": "node --test test/integration.test.ts",
+    "test:all": "node --test test/narrow.test.ts && node --test test/integration.test.ts",
+    "typecheck": "npx tsc --noEmit",
+    "verify": "npm run typecheck && npm run test:all",
+    "dev": "wrangler dev --port 8787"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "agents": "^0.28.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261011.1",
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.149.0"
+  }
+}

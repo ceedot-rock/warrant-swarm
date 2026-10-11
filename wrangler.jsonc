@@ -1,0 +1,1 @@
+{"compatibility_date":"2026-10-01","compatibility_flags":["nodejs_compat"],"durable_objects":{"bindings":[{"class_name":"SwarmCoordinator","name":"SWARM_COORDINATOR"}]},"main":"src/index.ts","migrations":[{"new_sqlite_classes":["SwarmCoordinator"],"tag":"v1"}],"name":"warranted-swarm"}

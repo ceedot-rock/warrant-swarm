@@ -1,0 +1,53 @@
+{
+    "scenario": "warranted-swarm demo",
+    "attenuation": [
+        100,
+        40,
+        15
+    ],
+    "steps": [
+        {
+            "step": "startRun",
+            "runId": "run-mv3pc0xf-67obu",
+            "rootCapCents": 100
+        },
+        {
+            "step": "delegate",
+            "warrantId": "run-mv3pc0xf-67obu/researcher",
+            "capCents": 40
+        },
+        {
+            "step": "delegate",
+            "warrantId": "run-mv3pc0xf-67obu/researcher/leaf",
+            "capCents": 15
+        },
+        {
+            "step": "spend",
+            "costCents": 10,
+            "result": "APPROVED",
+            "remainingCents": 15
+        },
+        {
+            "step": "spend",
+            "costCents": 50,
+            "result": "DENIED",
+            "code": "OVER_BUDGET",
+            "message": "OVER_BUDGET: cost 50c exceeds warrant cap 15c"
+        },
+        {
+            "step": "delegate",
+            "capCents": 200,
+            "result": "REJECTED",
+            "code": "warrant_widen_cents",
+            "message": "warrant_widen_cents"
+        }
+    ],
+    "ledger": [
+        "{\"t\":1791715812,\"event\":\"run_started\",\"runId\":\"run-mv3pc0xf-67obu\",\"goal\":\"demo run\",\"budgetCents\":100}",
+        "{\"t\":1791715812,\"event\":\"delegated\",\"parentId\":\"run-mv3pc0xf-67obu\",\"warrantId\":\"run-mv3pc0xf-67obu/researcher\",\"agentId\":\"researcher\",\"capCents\":40}",
+        "{\"t\":1791715812,\"event\":\"delegated\",\"parentId\":\"run-mv3pc0xf-67obu/researcher\",\"warrantId\":\"run-mv3pc0xf-67obu/researcher/leaf\",\"agentId\":\"leaf\",\"capCents\":15}",
+        "{\"t\":1791715812,\"event\":\"spend_approved\",\"warrantId\":\"run-mv3pc0xf-67obu/researcher/leaf\",\"callerId\":\"leaf\",\"costCents\":10,\"remaining\":15}",
+        "{\"t\":1791715812,\"event\":\"spend_denied\",\"warrantId\":\"run-mv3pc0xf-67obu/researcher/leaf\",\"callerId\":\"leaf\",\"costCents\":50,\"code\":\"OVER_BUDGET\",\"detail\":\"cost 50c exceeds warrant cap 15c\"}"
+    ],
+    "ledgerLines": 5
+}
