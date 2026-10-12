@@ -7,6 +7,8 @@
   "scripts": {
     "test": "node --test test/narrow.test.ts",
     "test:integration": "node --test test/integration.test.ts",
+    "test:celld": "node --test test/celld.test.ts",
+    "test:runtimes": "npm run test:integration && npm run test:celld",
     "test:all": "node --test test/narrow.test.ts && node --test test/integration.test.ts",
     "typecheck": "npx tsc --noEmit",
     "verify": "npm run typecheck && npm run test:all",

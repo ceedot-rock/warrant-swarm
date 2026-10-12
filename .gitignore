@@ -4,6 +4,10 @@ node_modules/
 # wrangler / workerd local state
 .wrangler/
 
+# celld local state + binary (downloaded, not committed)
+.celld/
+.tools/
+
 # build output
 dist/
 build/
